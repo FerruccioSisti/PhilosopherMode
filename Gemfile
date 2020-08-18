@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 2.7'
 #### Gems added during development
 gem 'devise'
 gem 'simple_form'
+
+gem 'pusher'
+gem 'figaro'
 ####
 
 
