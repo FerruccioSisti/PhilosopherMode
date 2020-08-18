@@ -31,6 +31,7 @@ gem 'simple_form'
 
 gem 'pusher'
 gem 'figaro'
+gem 'solargraph', group: :development
 ####
 
 
