@@ -12,6 +12,20 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
       </li>
+      <% if current_user %>
+      <%# If default then show create option if not then show team name %>
+        <% if current_user.team.eql? '???'  %>
+            <li class="nav-item">
+                <%= link_to "Create team", new_team_path, class: "nav-link" %>
+            </li>
+        <% else %>
+            <li class="nav-item">
+                <%# <%= link_to "<%= current_user.team %>", edit_team_path, class: "nav-link" %> %> %>
+            </li>
+        <% end %>
+      <% else %>
+
+      <% end %>
     </ul>
 
     <%# Dropdown menu %>
@@ -19,7 +33,7 @@
         <% if current_user %>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= current_user.username %>
+                <%= current_user.username %> | <%= current_user.team %>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <% if current_user.admin %>

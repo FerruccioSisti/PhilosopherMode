@@ -1,0 +1,15 @@
+
+<%= form_with model: team do |f| %>
+
+
+  <div class="form-inputs">
+    <%= f.text_field :name, class:'form-control string' %>
+
+    <%= f.label :logo, class:'form-control' %>
+    <%= f.file_field :logo %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
