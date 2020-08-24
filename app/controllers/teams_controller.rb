@@ -27,11 +27,12 @@ class TeamsController < ApplicationController
   def create
     @team = Team.new(team_params)
     @team.user = current_user
-    @team.players = current_user.to_s
-    current_user.team = @team.name.to_s
+    @team.players = current_user.playername
 
     respond_to do |format|
       if @team.save
+        current_user.update(team: @team.name)
+        current_user.update(tid: @team.id)
         format.html { redirect_to @team, notice: 'Team was successfully created.' }
         format.json { render :show, status: :created, location: @team }
       else
@@ -73,6 +74,6 @@ class TeamsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def team_params
-      params.require(:team).permit(:name, :logo)
+      params.require(:team).permit(:name, :logo, :user)
     end
 end

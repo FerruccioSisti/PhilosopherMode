@@ -3,5 +3,10 @@
         <h1 class="display-4">What is Philosopher Mode?</h1>
     </div>
 
+    <div style=overflow-y:hidden">
+        <% if current_user %>
+        <%= current_user.attributes %>
+        <% end %>
 
+    </div>
 </div>

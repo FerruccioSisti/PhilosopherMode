@@ -1,7 +1,28 @@
 <div style=overflow-y:hidden">
+  <%= current_user.username %>
   <%= image_tag(@team.logo) %>
+
   <%= current_user.team %>
   <%= @team.name %>
+
   <%= @team.players %>
   <%= current_user.playername %>
+
+  <%= @team.id %>
+  blank
+  <% if current_user.tid.nil? %>
+      its nil
+  <% else %>
+    <%= current_user.tid.to_s %>
+  <% end %>
+
+  space space
+  <%= @team.user_id %>
+
+  <%= @team.attributes %>
+
+  <br>
+  <br>
+  <%# <%= current_user.update(tid: @team.id) %> %>
+  <%= current_user.tid %>
 </div>
