@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Radiant:</strong>
+  <%= @draft.radiant %>
+</p>
+
+<p>
+  <strong>Dire:</strong>
+  <%= @draft.dire %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @draft.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_draft_path(@draft) %> |
+<%= link_to 'Back', drafts_path %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :drafts
   resources :teams
   devise_for :users
   root 'pages#about'
